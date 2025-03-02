@@ -1,0 +1,61 @@
+{
+    "info": {
+        "name": "Image Compression System API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Upload CSV",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "multipart/form-data"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:5000/upload",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "upload"
+                    ]
+                },
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "file",
+                            "type": "file",
+                            "src": "<CSV_FILE_PATH>"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Check Status",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:5000/status/{{request_id}}",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "status",
+                        "{{request_id}}"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
